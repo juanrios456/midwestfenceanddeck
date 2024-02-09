@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Inria+Serif:wght@300&family=Kite+One&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  p{
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;
+  }
+  h1, h2, h3, h4, h5, h6{
+    font-family: 'Inria Serif', serif;
+  }
+  h1{
+    font-size: 48px;
+  }
+  h2{
+    font-size: 36px;
+  }
+  h3{
+    font-size: 28px;
+  }
+  i{
+    font-family: 'Kite One', sans-serif;
+  }
+  @media (min-width: 768px){
+    h1{
+    font-size: 56px;
+    }
+    h2{
+      font-size: 48px;
+    }
+    h3{
+      font-size: 36px;
+    }
+
+  }
+}
