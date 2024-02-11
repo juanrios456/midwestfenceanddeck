@@ -27,7 +27,7 @@ export function Footer(){
           </ButtonGroup>
         </div>
         <div className="flex flex-wrap justify-center text-stone-50">
-          <p><Link href="/sitemap" className=" text-sky-400">View Sitemap</Link>&nbsp;| Website Created By <Link href="mailto:juanriis456@gmail.com" className=" text-sky-400">Brainstorm Creative</Link></p>
+          <p><Link href="/sitemap.xml" className=" text-sky-400">View Sitemap</Link>&nbsp;| Website Created By <Link href="mailto:juanriis456@gmail.com" className=" text-sky-400">Brainstorm Creative</Link></p>
         </div>
       </div>
     </footer>
