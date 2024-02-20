@@ -1,8 +1,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://midwestfenceanddeck.com</loc>
-    <lastmod>2024-02-11</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2024-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://midwestfenceanddeck.com/gallery</loc>
+    <lastmod>2024-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

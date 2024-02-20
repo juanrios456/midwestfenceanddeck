@@ -10,6 +10,10 @@ export function NavigationMenu() {
       href: '/'
     },
     {
+      text: 'Gallery',
+      href: '/gallery'
+    },
+    {
       text: 'Contact Us',
       href: '/#footer'
     }
@@ -48,16 +52,15 @@ export function NavigationMenu() {
           />
         </NavbarBrand>
 
-        <NavbarItem>
-          <Link href="/">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/#footer">
-            Contact Us
-          </Link>
-        </NavbarItem>
+        {
+          menuItems.map((item, index)=>(
+          <NavbarItem key={index}>
+            <Link href={item.href}>
+              {item.text}
+            </Link>
+          </NavbarItem>
+          ))
+        }
       </NavbarContent>
 
       <NavbarMenu>

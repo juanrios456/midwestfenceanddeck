@@ -8,31 +8,31 @@ register()
 const imageList = [
   {
     src:'/roof.jpg',
-    alt: 'D'
+    alt: 'Roof Built over a slab of concrete with lighting around the ceiling frame'
   },
   {
     src: '/fence-in-sunlight.jpg',
-    alt: 'd',
+    alt: 'Straight steel fence with the setting sun in the background',
   },
   {
     src: '/wood-privacy-fence.jpg',
-    alt: 'd',
+    alt: 'Dog ear top 6 foot privacy fence',
   },
   {
     src: '/deck-and-stairs.jpg',
-    alt: 'd',
+    alt: '3 story house with a roofless deck on the second floor with stairs taking you downstairs',
   },
   {
     src: '/deck-floor-1.jpg',
-    alt: 'd',
+    alt: 'Dog sitting on top of a deck floor staring inside the house',
   },
   {
     src: '/vinyl-fence-1.jpg',
-    alt: 'd'
+    alt: 'Vinyl fence gate with a fancy top'
   },
   {
     src: '/pergola-4.jpg',
-    alt: 'd'
+    alt: 'Orange pergola shading the backyard of a home'
   },
 ];
 

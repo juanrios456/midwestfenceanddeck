@@ -12,33 +12,33 @@ export function SlideShows(){
       <SlideshowSection
         title="Wood Fences"
         imageList={woodImageList}
-        galleryLink="#Fences"
+        galleryLink="/#WoodFences"
         containerClassName="bg-[#474343] text-white"
       />
       <SlideshowSection
         title='Decks, Screen Decks, and Patios'
         imageList={deckImageList}
-        galleryLink="#Decks"
+        galleryLink="/#Decks"
         containerClassName="bg-[#F76565] "
         rtl
       />
       <SlideshowSection
         title="Vinyl and Composite Fences"
         imageList={vinylImageList}
-        galleryLink="#Fences"
+        galleryLink="/#VinylFences"
         containerClassName="bg-[#ECECEC] "
       />
       <SlideshowSection
         title='Pergolas'
         imageList={pergolaImageList}
-        galleryLink="#Pergolas"
+        galleryLink="/#Pergolas"
         containerClassName="bg-[#7E7D7D] text-white"
         rtl
       />
       <SlideshowSection
         title='Steel and Aluminum Fences'
         imageList={steelImageList}
-        galleryLink="#Pergolas"
+        galleryLink="/#SteelAndAluminumFences"
         containerClassName="bg-[#ECECEC] "
       />
     </>
@@ -48,19 +48,19 @@ export function SlideShows(){
 const vinylImageList = [
       {
         src: '/vinyl-fence-1.jpg',
-        alt: 'tall-vinyl-privacy-fence-and-vinyl-gate-with-lattice'
+        alt: 'tall vinyl privacy fence and vinyl gate with lattice'
       },
       {
         src: '/vinyl-fence-2.jpg',
-        alt: 'tall-lattice-top-white-privacy-vinyl-fence-with-gate'
+        alt: 'tall lattice top white privacy vinyl fence with gate'
       },
       {
         src: '/vinyl-fence-3.jpg',
-        alt: 'dark-brown-picture-frame-vinyl-fence'
+        alt: 'dark brown vinyl fence with a picture frame style'
       },
       {
         src: '/vinyl-fence-4.jpg',
-        alt: 'semi-privacy-4foot-white-vinyl-fence'
+        alt: 'semi privacy 4 foot white vinyl fence'
       }
     ]
 const woodImageList = [
@@ -70,69 +70,69 @@ const woodImageList = [
       },
       {
         src: '/wood-fence-2.jpg',
-        alt: 'wood-privacy-fence'
+        alt: 'regular 6 foot wood privacy fence'
       },
       {
         src: '/wood-fence-3.jpg',
-        alt: 'wood-picture-frame-fence-with-gate'
+        alt: 'wood picture frame fence with gate'
       },
       {
         src: '/wood-fence-4.jpg',
-        alt: 'wood-horizontal-fence-semi-privacy'
+        alt: 'semi privacy horizontal wood fence'
       }
     ]
 const pergolaImageList = [
       {
         src: '/pergola-1.jpg',
-        alt: 'brown-pergola-over-a-patio-and-fireplace'
+        alt: 'brown pergola over a patio and fireplace'
       },
       {
         src: '/pergola-2.jpg',
-        alt: 'tan-pergola-over-a-fireplace'
+        alt: 'tan pergola over a fireplace'
       },
       {
         src: '/pergola-3.jpg',
-        alt: 'brown-deck-with-pergola-stairs-and-chairs-on-the-deck'
+        alt: 'brown deck with pergola stairs and chairs on the deck'
       },
       {
         src: '/pergola-4.jpg',
-        alt: 'red-pergola-over-a-backyard-patio'
+        alt: 'red pergola over a backyard patio'
       }
     ]
 const deckImageList = [
       {
         src: '/deck-1.jpg',
-        alt: 'brown-deck-with-stairs-special--curved-railing-and-a-pergola'
+        alt: 'brown deck with stairs special curved railing and a pergola'
       },
       {
         src: '/deck-2.jpg',
-        alt: 'gray-deck-with-stairs-gravel-and-pergola'
+        alt: 'gray deck with stairs gravel and pergola'
       },
       {
         src: '/deck-3.jpg',
-        alt: 'brown-deck-with-stairs-no-roof'
+        alt: 'brown deck with stairs and no roof over a concrete slab'
       },
       {
         src: '/deck-4.jpg',
-        alt: 'light-brown-deck-with-steps-stairs-and-a-roof'
+        alt: 'light brown deck with steps stairs and a roof'
       }
     ]
 const steelImageList = [
       {
         src: '/steel-fence-1.jpg',
-        alt: 'straight-steel-semi-privacy-fence'
+        alt: 'straight steel semi privacy fence'
       },
       {
         src: '/steel-fence-2.jpg',
-        alt: 'steel-fence-straight-with-spike-design'
+        alt: 'steel fence straight with spike design'
       },
       {
         src: '/steel-fence-3.jpg',
-        alt: 'steel-fence-with-multiple-corners-over-retaining-wall'
+        alt: 'steel fence  with multiple corners over retaining wall'
       },
       {
         src: '/steel-fence-4.jpg',
-        alt: 'steel-railing-on-top-of-a-high-retaining-wall'
+        alt: 'steel railing on top of a high retaining wall'
       }
     ]
 
@@ -143,7 +143,6 @@ function SlideshowSection(props){
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const [modalState, setModalState] = useState('')
 
-
   const updateModalImage = (event)=>{
     setModalState(event.target.src)
     onOpen()
@@ -153,7 +152,7 @@ function SlideshowSection(props){
     <div className={`py-10 px-3  ${containerClassName}`}>
       <div className="flex flex-col justify-center">
         <h2 className="text-center">{title}</h2>
-        <i className="text-center">Click any of the images below to enlarge them.</i>
+        <i className="text-center text-2xl">Click any of the images below to enlarge them.</i>
       </div>
       <div className={`py-10 px-3 flex justify-center items-center`}>
         <swiper-container
@@ -194,10 +193,10 @@ function SlideshowSection(props){
               <ModalBody>
                 <Image
                   src={modalState}
-                  alt="Wow"
+                  alt="popup-image"
                   width="auto"
                   height="auto"
-                  className="w-full max-h-[80vh]  "
+                  className="h-full max-h-[90vh] w-auto "
                 />
               </ModalBody>
               <ModalFooter>
@@ -209,15 +208,9 @@ function SlideshowSection(props){
           )}
         </ModalContent>
       </Modal>
-      {
-        /*
-          When Gallery is completed uncomment this block.
       <div className="flex justify-center">
         <Button href={`/gallery${galleryLink ?? ''}`} as={Link} variant="shadow">View Full Image Gallery</Button>
       </div>
-
-        */ 
-      }
     </div>
   )
 }
