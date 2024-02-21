@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export function GallerySection({title, children}:{ title: string, children: React.ReactNode }){
   return(
-    <div className="px-4 py-14">
+    <div className="px-4 py-4">
       <h1 className="text-center">{title}</h1>
       <Divider/>
       <div className="py-4">
@@ -27,8 +27,8 @@ export function GallerySubsection({title, imageList, srcPath, id, }:{title:strin
   </div>);
 }
 
-export function BeforeAndAfter({array}:{ array: Array<string>}){
-  let imageList:any = []
+export function BeforeAndAfter({imageList, id, title, srcPath}:{ imageList: Array<string>, id:string, title: string, srcPath: string}){
+  let array:any = []
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const [modalState, setModalState] = useState('')
 
@@ -40,14 +40,14 @@ export function BeforeAndAfter({array}:{ array: Array<string>}){
   //this arranges the object array and transforms it into an array with 2 objects
   //the src and the alt for the before image and the src and alt for the after image
   //It is needed in order to loop over the before and after images for the decks section.
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
+  for (let index = 0; index < imageList.length; index++) {
+    const element = imageList[index];
     index++;
-    imageList.push({beforeImage: element, afterImage: array[index]})
+    array.push({beforeImage: element, afterImage: imageList[index]})
   }
   return(
     <>
-    <h2 id="Decks">Before and After</h2>
+    <h2 id={id}>{title}</h2>
     <p className="text-2xl text-center bg-black text-white">Click any image below to enlarge it.</p>
 
     <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="4xl" placement="center" >
@@ -73,15 +73,15 @@ export function BeforeAndAfter({array}:{ array: Array<string>}){
         )}
       </ModalContent>
     </Modal>
-    <div className=" flex flex-row flex-wrap justify-center gap-4" id="#Decks">
+    <div className=" flex flex-row flex-wrap justify-center gap-4 py-4" id="#Decks">
     {
-      imageList.map((item:any,index:number)=>(
+      array.map((item:any,index:number)=>(
       <Card className="" key={index}>
         <CardBody className="flex flex-row flex-wrap gap-4 justify-center items-center">
           <div className="flex flex-col text-xl">
             <p className="text-center"><i>Before</i></p>
             <Image
-              src={`/decks/before-and-after/${item.beforeImage.src}`}
+              src={`${srcPath}${item.beforeImage.src}`}
               alt={item.beforeImage.alt}
               width={300}
               height={275}
@@ -92,7 +92,7 @@ export function BeforeAndAfter({array}:{ array: Array<string>}){
           <div className="flex flex-col">
             <p className="text-center"><i>After</i></p>
             <Image
-              src={`/decks/before-and-after/${item.afterImage.src}`}
+              src={`${srcPath}${item.afterImage.src}`}
               alt={item.afterImage.alt}
               width={300}
               height={275}

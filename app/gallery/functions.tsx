@@ -82,7 +82,34 @@ export function wow(directory:string){
         'white and blue porch deck with paint fading on the floor stairs and railing',
       ];
       break;
-
+    case './public/stairs/before-and-after':
+      altArray = [
+        'new blue stairs with white railing',
+        'old wood stairs with missing boards and white railing',
+        'brown deck with brown steps and railing after some rain',
+        'gray wood deck with stairs'
+      ]
+      break;
+    case './public/protective-railing':
+      altArray = [
+        'steel black railing over stone stairs and stone walkway',
+        'black steel railing on the ledge of a building',
+        'patio with floor made of stone and black steel railing on the edge',
+        'concrete porch with stairs and black railing',
+        'steel black railing covering a retaining wall ledge',
+        'stone retaining wall with steel railing on top',
+        'railing surrounding a hole where there is a window to a basement',
+        'gray deck with black railing around the edge',
+      ];
+      break;
+    case './public/pergolas':
+      altArray = [
+        'brown pergola over a fireplace and concrete patio',
+        'top of two intertwining wood pergolas',
+        'two red wood pergolas with intertwining tops over a concrete slab in a backyard',
+        'tan pergola over a concrete slab and fireplace',
+      ]
+      break;
     default:
       break;
   }

@@ -15,7 +15,7 @@ export function NavigationMenu() {
     },
     {
       text: 'Contact Us',
-      href: '/#footer'
+      href: '/contact'
     }
   ];
   const ok= <FaGripLines size="40px" />

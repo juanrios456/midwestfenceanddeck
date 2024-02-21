@@ -3,6 +3,7 @@ import { Header } from "./header";
 import { Services } from "./services";
 import { SlideShows } from "./slideshows";
 import { Metadata } from 'next'
+import { CreditedBusiness } from "./creditedBusiness";
 
 export const metadata:Metadata = {
   title: 'Fence Contractor | Deck Builder Near Kansas - Midwest Fence and Deck',
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <main className="">
       <Header/>
+      <CreditedBusiness/>
       <Services/>
       <SlideShows/>
     </main>
