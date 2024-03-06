@@ -25,7 +25,7 @@ const services = [
       Whether you envision a spacious wooden deck for entertaining or a cozy composite deck for low-maintenance luxury, we bring your dreams to life.
       Trust us to deliver quality craftsmanship, using top-tier materials to ensure your deck not only enhances your lifestyle but also stands strong against the elements.
       Transform your outdoor space into a haven of relaxation and entertainment with our professional deck building solutions.`,
-    picture:'/deck-floor.jpg',
+    picture:'/covered-or-screened-deck/before-and-after/deck-with-screen-stairs-and-porch-after.jpg',
     serviceButton:{
       text: "Call Now",
       href: "tel:+17857270645"
@@ -48,7 +48,7 @@ const services = [
     description: `Our fence repair and restoration service offers expert diagnosis and comprehensive solutions for damaged fences caused by wear, weather, or pests.
     With skilled technicians proficient in utilizing a diverse range of materials and techniques, we efficiently mend broken sections and reinforce weak points to restore both functionality and aesthetics.
     Trust us for meticulous attention to detail and a commitment to enhancing the longevity and appeal of your fencing structure.`,
-    picture: '/deck-redesign-repair.jpg',
+    picture: '/fences/wood/privacy/dog-ear-top-privacy-wood-fence-1.jpg',
     serviceButton:{
       text: "Call Us Now",
       href: "tel:+17857270645"

@@ -190,13 +190,13 @@ function SlideshowSection(props){
           {(onClose) => (
             <>
               <ModalHeader></ModalHeader>
-              <ModalBody>
+              <ModalBody className="flex justify-center items-center">
                 <Image
                   src={modalState}
                   alt="popup-image"
                   width="auto"
                   height="auto"
-                  className="h-full max-h-[90vh] w-auto "
+                  className="h-full max-h-[80vh] w-auto "
                 />
               </ModalBody>
               <ModalFooter>

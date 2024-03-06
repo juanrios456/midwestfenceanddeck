@@ -24,6 +24,8 @@ export function Footer(){
             <Button color="success" as={Link} href="/tel:+17857270645" >Call Today</Button>
             <Button color="warning"  as={Link} href="mailto:john@midwestfenceanddeck.com" >Email Us</Button>
             <Button as={Link} href="https://www.instagram.com/midwestfenceanddeck/">Follow on Instagram</Button>
+            <Button as={Link} color="primary" href="https://www.facebook.com/profile.php?id=61556341003818">Follow on Instagram</Button>
+
           </ButtonGroup>
         </div>
         <div className="flex flex-wrap justify-center text-stone-50">
