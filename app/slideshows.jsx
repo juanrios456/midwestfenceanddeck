@@ -196,7 +196,7 @@ function SlideshowSection(props){
                   alt="popup-image"
                   width="auto"
                   height="auto"
-                  className="h-full max-h-[80vh] w-auto "
+                  className="h-full max-h-[80vh] w-auto object-contain "
                 />
               </ModalBody>
               <ModalFooter>

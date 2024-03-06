@@ -49,7 +49,7 @@ export function BeforeAndAfter({imageList, srcPath}:{ imageList: Array<string>, 
                 alt="PopUp Image"
                 width="auto"
                 height="auto"
-                className="h-full max-h-[80vh] w-auto "
+                className="h-full max-h-[80vh] w-auto object-contain "
               />
             </ModalBody>
             <ModalFooter>
@@ -117,7 +117,7 @@ export function BuildImages({imageList, srcPath}:{ imageList:Array<{src:string, 
                 alt="PopUp Image"
                 width="auto"
                 height="auto"
-                className="h-full max-h-[80vh] w-auto "
+                className="h-full max-h-[80vh] w-auto object-contain"
               />
             </ModalBody>
             <ModalFooter>
