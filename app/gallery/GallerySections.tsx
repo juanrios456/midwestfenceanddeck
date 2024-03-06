@@ -1,6 +1,6 @@
 'use client'
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Image, Button, useDisclosure, Divider, Card, CardBody } from "@nextui-org/react";
-import { useState } from "react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Image, Button, useDisclosure, Divider, Card, CardBody, Accordion, AccordionItem } from "@nextui-org/react";
+import { useRef, useState } from "react";
 
 export function GallerySection({title, children}:{ title: string, children: React.ReactNode }){
   return(
@@ -15,53 +15,41 @@ export function GallerySection({title, children}:{ title: string, children: Reac
   );
 }
 
-export function GallerySubsection({title, imageList, srcPath, id, }:{title:string, imageList:string[], srcPath:string, id: string}){
+export function GallerySubsection({title, id, children }:{title:string, id: string, children: React.ReactNode}){
   return(
   <div>
     <h2 id={id}>{title}</h2>
     <p className="text-2xl text-center bg-black text-white">Click any image below to enlarge it.</p>
-    <div className='px-4 py-4 flex flex-row flex-wrap gap-5 justify-center '>
-      <BuildImages imageList={imageList} srcPath={srcPath}/>
+    <div className='flex flex-row flex-wrap justify-center gap-4 p-4 '>
+      {children}
     </div>
     
   </div>);
 }
 
-export function BeforeAndAfter({imageList, id, title, srcPath}:{ imageList: Array<string>, id:string, title: string, srcPath: string}){
-  let array:any = []
+export function BeforeAndAfter({imageList, srcPath}:{ imageList: Array<string>, srcPath: string}){
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [modalState, setModalState] = useState('')
+  const [modalState, setModalState] = useState('');
 
   const updateModalImage = (event:any)=>{
-    setModalState(event.target.src)
-    onOpen()
+    setModalState(event.target.src);
+    onOpen();
   }
 
-  //this arranges the object array and transforms it into an array with 2 objects
-  //the src and the alt for the before image and the src and alt for the after image
-  //It is needed in order to loop over the before and after images for the decks section.
-  for (let index = 0; index < imageList.length; index++) {
-    const element = imageList[index];
-    index++;
-    array.push({beforeImage: element, afterImage: imageList[index]})
-  }
   return(
     <>
-    <h2 id={id}>{title}</h2>
-    <p className="text-2xl text-center bg-black text-white">Click any image below to enlarge it.</p>
-
     <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="4xl" placement="center" >
       <ModalContent className="bg-zinc-800">
         {(onClose) => (
           <>
             <ModalHeader></ModalHeader>
-            <ModalBody>
+            <ModalBody className="flex justify-center items-center">
               <Image
                 src={`${modalState}`}
-                alt="Wow"
+                alt="PopUp Image"
                 width="auto"
                 height="auto"
-                className="h-full max-h-[90vh] w-auto "
+                className="h-full max-h-[80vh] w-auto "
               />
             </ModalBody>
             <ModalFooter>
@@ -73,16 +61,15 @@ export function BeforeAndAfter({imageList, id, title, srcPath}:{ imageList: Arra
         )}
       </ModalContent>
     </Modal>
-    <div className=" flex flex-row flex-wrap justify-center gap-4 py-4" id="#Decks">
     {
-      array.map((item:any,index:number)=>(
+      imageList.map((item:any,index:number)=>(
       <Card className="" key={index}>
         <CardBody className="flex flex-row flex-wrap gap-4 justify-center items-center">
           <div className="flex flex-col text-xl">
             <p className="text-center"><i>Before</i></p>
             <Image
-              src={`${srcPath}${item.beforeImage.src}`}
-              alt={item.beforeImage.alt}
+              src={`${srcPath}${item.before.src}`}
+              alt={item.before.alt}
               width={300}
               height={275}
               onClick={updateModalImage}
@@ -92,8 +79,8 @@ export function BeforeAndAfter({imageList, id, title, srcPath}:{ imageList: Arra
           <div className="flex flex-col">
             <p className="text-center"><i>After</i></p>
             <Image
-              src={`${srcPath}${item.afterImage.src}`}
-              alt={item.afterImage.alt}
+              src={`${srcPath}${item.after.src}`}
+              alt={item.after.alt}
               width={300}
               height={275}
               onClick={updateModalImage}
@@ -104,18 +91,17 @@ export function BeforeAndAfter({imageList, id, title, srcPath}:{ imageList: Arra
       </Card>
       ))
     }
-    </div>
     </>
   );
 }
 
-export function BuildImages({imageList, srcPath}:{ imageList:string[], srcPath:string}){
+export function BuildImages({imageList, srcPath}:{ imageList:Array<{src:string, alt:string}>, srcPath:string}){
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-  const [modalState, setModalState] = useState('')
+  const [modalState, setModalState] = useState('');
 
   const updateModalImage = (event:any)=>{
-    setModalState(event.target.src)
-    onOpen()
+    setModalState(event.target.src);
+    onOpen();
   }
 
   return(
@@ -125,13 +111,13 @@ export function BuildImages({imageList, srcPath}:{ imageList:string[], srcPath:s
         {(onClose) => (
           <>
             <ModalHeader></ModalHeader>
-            <ModalBody>
+            <ModalBody className="flex justify-center items-center">
               <Image
                 src={`${modalState}`}
-                alt="Wow"
+                alt="PopUp Image"
                 width="auto"
                 height="auto"
-                className="w-full max-h-[80vh]  "
+                className="h-full max-h-[80vh] w-auto "
               />
             </ModalBody>
             <ModalFooter>
@@ -148,7 +134,7 @@ export function BuildImages({imageList, srcPath}:{ imageList:string[], srcPath:s
       <Image
         src={`${srcPath}${item.src}`}
         onClick={updateModalImage}
-        alt={item.src}
+        alt={item.alt}
         width={370}
         height={400}
         className='w-full h-auto max-w-[300px] hover:cursor-pointer'
@@ -156,6 +142,58 @@ export function BuildImages({imageList, srcPath}:{ imageList:string[], srcPath:s
     </div>
     ))}
     </>
+  )
+}
+
+export function BuildCollageBlock(
+  {
+    text,
+    src,
+    alt,
+    srcPath,
+    collageArray,
+  }
+  :
+  {
+    text:string,
+    src: string,
+    alt: string,
+    srcPath: string,
+    collageArray: Array<{src:string, alt:string}>,
+  }){
+
+  return(
+    <>
+    <Accordion className="" variant="shadow">
+      <AccordionItem key="1" aria-label="Accordion 1" title={<CollageBlock text={text} src={src} alt={alt}/>}  className="">
+      <div className='flex flex-row flex-wrap justify-center gap-4 p-4 '>
+        <BuildImages imageList={collageArray} srcPath={srcPath}/>
+      </div>        
+      </AccordionItem>
+    </Accordion>
+    
+    </>
+  )
+}
+
+function CollageBlock({text, src, alt}:
+  {
+    text: string,
+    src: string,
+    alt: string,
+  }){
+  return(
+    <div className="flex flex-col justify-center items-center w-full bg-zinc-300 p-4 space-y-4" >
+      <h4 className="text-2xl text-center">{text}</h4>
+      <p className="text-xl">Click This Gray Block to view the full image collage</p>
+      <Image
+        src={src}          
+        alt={alt}
+        width={370}
+        height={400}
+        className='w-full max-w-[250px] h-auto hover:cursor-pointer'
+      />
+    </div>
   )
 }
 
