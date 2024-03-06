@@ -42,8 +42,7 @@ function ContactMethod(){
         <p className="text-center">Follow Us on Social Media!<br/>
         Tap any button below to follow us on the following social media!</p>
         <Button as={Link} href="https://www.instagram.com/midwestfenceanddeck/" color="primary" endContent={<FaInstagram/>}>View Instagram</Button>
-       {// <Button as={Link} href="/" color="primary" endContent={<FaFacebook/>}>View Facebook</Button>
-}
+        <Button as={Link} href="https://www.facebook.com/profile.php?id=61556341003818" color="primary" endContent={<FaFacebook/>}>View Facebook</Button>
       </div>
     </div>
   )
