@@ -428,7 +428,7 @@ export function wow(directory:string){
           alt: 'deck with stairs'
         },
         {
-          src: 'deck-with-screren-and-stairs.jpg',
+          src: 'deck-with-screen-and-stairs.jpg',
           alt: 'deck with stairs, screened deck and a roof along with an outer upper porch'      
         },
         
